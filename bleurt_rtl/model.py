@@ -77,7 +77,7 @@ flags.DEFINE_bool(
     "Whether to use a ranking loss instead of regression (l2 loss).")
 
 flags.DEFINE_bool(
-    "punish_sequence_length", True,
+    "punish_length_difference", True,
     "L2 loss with regularizer to punish differences in sequence length")
 
 # BLEURT model flags.
