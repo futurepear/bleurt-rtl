@@ -29,14 +29,14 @@ install_requires = [
 setuptools.setup(
     name="BLEURT-RTL",  # Replace with your own username
     version="0.0.2.1",
-    author="The Google AI Language Team",
-    description="The BLEURT metric for Natural Language Generation.",
+    author="The Google AI Language Team, Future Pear",
+    description="Modified BLEURT metric (RTL version).",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/google-research/bleurt",
-    packages=setuptools.find_packages(),
+    url="https://github.com/futurepear/bleurt-rtl",
+    packages=["bleurt_rtl"],
     package_data={
-        "bleurt": ["test_checkpoint/*", "test_checkpoint/variables/*"]
+        "bleurt-rtl": ["test_checkpoint/*", "test_checkpoint/variables/*"]
     },
     classifiers=[
         "Programming Language :: Python :: 3",
