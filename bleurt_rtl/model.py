@@ -80,6 +80,9 @@ flags.DEFINE_bool(
     "punish_length_difference", True,
     "L2 loss with regularizer to punish differences in sequence length")
 
+flags.DEFINE_float("length_difference_penalty_strength", 0.005,
+  "Lambda factor to control the length difference penalty.")
+
 # BLEURT model flags.
 flags.DEFINE_integer("n_hidden_layers", 0,
                      "Number of fully connected/RNN layers before prediction.")
