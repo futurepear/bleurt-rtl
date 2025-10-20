@@ -76,6 +76,10 @@ flags.DEFINE_bool(
     "use_ranking_loss", False,
     "Whether to use a ranking loss instead of regression (l2 loss).")
 
+flags.DEFINE_bool(
+    "punish_sequence_length", True,
+    "L2 loss with regularizer to punish differences in sequence length")
+
 # BLEURT model flags.
 flags.DEFINE_integer("n_hidden_layers", 0,
                      "Number of fully connected/RNN layers before prediction.")
@@ -143,10 +147,34 @@ def create_model(bert_config, is_training, input_ids, input_mask, segment_ids,
   # <float32>[batch_size]
   predictions = tf.squeeze(predictions, 1)
   # <float32>[batch_size]
+  
+  per_example_loss = 0
   if FLAGS.use_ranking_loss:
     per_example_loss = ranking_loss(predictions, labels)
   else:
     per_example_loss = tf.pow(predictions - labels, 2)
+    
+  if FLAGS.punish_length_difference:
+    # --- NEW: PENALTY FOR INPUT LENGTH DIFFERENCE ---
+    
+    # We use segment_ids to find the length of the reference (id=0) and
+    # candidate (id=1). We multiply by the input_mask to ignore padding.
+    is_reference = tf.cast(tf.equal(segment_ids, 0), dtype=tf.float32)
+    is_candidate = tf.cast(tf.equal(segment_ids, 1), dtype=tf.float32)
+    float_mask = tf.cast(input_mask, dtype=tf.float32)
+
+    # Calculate the length of each sentence in the batch
+    reference_lengths = tf.reduce_sum(is_reference * float_mask, axis=1)
+    candidate_lengths = tf.reduce_sum(is_candidate * float_mask, axis=1)
+
+    # Calculate the penalty term
+    lambda_penalty = FLAGS.length_difference_penalty_strength
+    length_difference = tf.abs(reference_lengths - candidate_lengths)
+    length_difference_penalty = lambda_penalty * length_difference
+
+    # Add the penalty to the primary loss
+    per_example_loss = per_example_loss + length_difference_penalty
+    
   # <float32> []
   loss = tf.reduce_mean(per_example_loss, axis=-1)
 
