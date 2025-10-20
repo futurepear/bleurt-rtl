@@ -15,7 +15,7 @@
 """Tests for scoring function."""
 import os
 
-from bleurt import score
+from bleurt_rtl import score
 import tensorflow.compat.v1 as tf
 tf.enable_eager_execution()
 

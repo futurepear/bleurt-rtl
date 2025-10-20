@@ -16,9 +16,9 @@ r"""Tests for finetuning function."""
 import os
 import tempfile
 
-from bleurt import checkpoint as checkpoint_lib
-from bleurt import finetune
-from bleurt import score
+from bleurt_rtl import checkpoint as checkpoint_lib
+from bleurt_rtl import finetune
+from bleurt_rtl import score
 import tensorflow.compat.v1 as tf
 
 flags = tf.flags

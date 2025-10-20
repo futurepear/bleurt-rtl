@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""Utils to read and write from BLEURT checkpoints."""
+"""Utils to read and write from bleurt_rtl checkpoints."""
 
 import json
 import os
@@ -32,7 +32,7 @@ def get_bleurt_params_from_flags_or_ckpt():
   logging.info("Reading BLEURT parameters")
 
   if FLAGS.init_bleurt_checkpoint:
-    logging.info("Reading paramter from BLEURT checkpoint: {}".format(
+    logging.info("Reading paramter from bleurt_rtl checkpoint: {}".format(
         FLAGS.init_bleurt_checkpoint))
     config = read_bleurt_config(FLAGS.init_bleurt_checkpoint)
     logging.info("Reads parameters from flags.")

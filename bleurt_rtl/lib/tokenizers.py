@@ -14,7 +14,7 @@
 # limitations under the License.
 """Wrapper classes for various types of tokenization."""
 
-from bleurt.lib import bert_tokenization
+from bleurt_rtl.lib import bert_tokenization
 import tensorflow.compat.v1 as tf
 import sentencepiece as spm
 

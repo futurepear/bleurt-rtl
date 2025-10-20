@@ -16,7 +16,7 @@
 import collections
 import json
 
-from bleurt import score
+from bleurt_rtl import score
 import numpy as np
 import pandas as pd
 from scipy import stats

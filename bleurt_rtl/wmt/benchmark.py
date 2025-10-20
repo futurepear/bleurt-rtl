@@ -16,9 +16,9 @@
 
 import os
 
-from bleurt import finetune
-from bleurt.wmt import db_builder
-from bleurt.wmt import evaluator
+from bleurt_rtl import finetune
+from bleurt_rtl.wmt import db_builder
+from bleurt_rtl.wmt import evaluator
 
 import tensorflow.compat.v1 as tf
 

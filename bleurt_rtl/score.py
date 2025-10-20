@@ -16,9 +16,9 @@
 
 import os
 
-from bleurt import checkpoint as checkpoint_lib
-from bleurt import encoding
-from bleurt.lib import tokenizers
+from bleurt_rtl import checkpoint as checkpoint_lib
+from bleurt_rtl import encoding
+from bleurt_rtl.lib import tokenizers
 import numpy as np
 import tensorflow as tf
 

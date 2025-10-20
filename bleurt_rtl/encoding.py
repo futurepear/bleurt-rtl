@@ -15,7 +15,7 @@
 """Data tokenization, encoding and serialization library."""
 import collections
 
-from bleurt.lib import tokenizers
+from bleurt_rtl.lib import tokenizers
 import numpy as np
 import pandas as pd
 import tensorflow.compat.v1 as tf

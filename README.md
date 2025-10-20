@@ -92,7 +92,7 @@ python -m bleurt.score_files -helpshort
 BLEURT may be used as a Python library as follows:
 
 ```
-from bleurt import score
+from bleurt_rtl import score
 
 checkpoint = "bleurt/test_checkpoint"
 references = ["This is a test."]
@@ -120,7 +120,7 @@ The following piece of code shows an example:
 import tensorflow as tf
 # Set tf.enable_eager_execution() if using TF 1.x.
 
-from bleurt import score
+from bleurt_rtl import score
 
 references = tf.constant(["This is a test."])
 candidates = tf.constant(["This is the test."])

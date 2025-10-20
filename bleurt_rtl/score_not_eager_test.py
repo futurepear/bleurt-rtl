@@ -15,7 +15,7 @@
 """Tests for scoring functions with TF1-style lazy execution."""
 import os
 
-from bleurt import score
+from bleurt_rtl import score
 import tensorflow.compat.v1 as tf
 tf.disable_eager_execution()
 

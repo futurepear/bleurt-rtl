@@ -14,15 +14,15 @@
 # limitations under the License.
 """BLEURT's Tensorflow ops."""
 
-from bleurt import checkpoint as checkpoint_lib
-from bleurt.lib import optimization
+from bleurt_rtl import checkpoint as checkpoint_lib
+from bleurt_rtl.lib import optimization
 import numpy as np
 from scipy import stats
 import tensorflow.compat.v1 as tf
 
 from tensorflow.compat.v1 import estimator as tf_estimator
 from tf_slim import metrics
-from bleurt.lib import modeling
+from bleurt_rtl.lib import modeling
 
 flags = tf.flags
 logging = tf.logging

@@ -15,10 +15,10 @@
 r"""Fine-tunes a BERT/BLEURT checkpoint."""
 import os
 
-from bleurt import checkpoint as checkpoint_lib
-from bleurt import encoding
-from bleurt import model
-from bleurt.lib import experiment_utils
+from bleurt_rtl import checkpoint as checkpoint_lib
+from bleurt_rtl import encoding
+from bleurt_rtl import model
+from bleurt_rtl.lib import experiment_utils
 import tensorflow.compat.v1 as tf
 
 

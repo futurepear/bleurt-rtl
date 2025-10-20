@@ -18,7 +18,7 @@ More info about the datasets: https://www.statmt.org/wmt19/metrics-task.html
 """
 import os
 import tempfile
-from bleurt.wmt import downloaders
+from bleurt_rtl.wmt import downloaders
 import pandas as pd
 import tensorflow.compat.v1 as tf
 

@@ -34,9 +34,9 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/futurepear/bleurt-rtl",
-    packages=["bleurt-rtl"],
+    packages=["bleurt_rtl"],
     package_data={
-        "bleurt-rtl": ["test_checkpoint/*", "test_checkpoint/variables/*"]
+        "bleurt_rtl": ["test_checkpoint/*", "test_checkpoint/variables/*"]
     },
     classifiers=[
         "Programming Language :: Python :: 3",

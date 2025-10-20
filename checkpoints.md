@@ -91,7 +91,7 @@ more info [here](https://github.com/google-research/bert/blob/master/README.md#o
 #### From BERT
 
 If you wish to train a new metric from a "fresh" [BERT checkpoint](http://github.com/google-research/bert)
-(that is, not fine-tuned on ratings), you can easily do so. The API is almost the same as fine-tuning from BLEURT:
+(that is, not fine-tuned on ratings), you can easily do so. The API is almost the same as fine-tuning from bleurt_rtl:
 
 ```
 BERT_DIR=bleurt/test_checkpoint

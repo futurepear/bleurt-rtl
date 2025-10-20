@@ -15,7 +15,7 @@
 """BLEURT scoring library."""
 
 import itertools
-from bleurt import score as score_lib
+from bleurt_rtl import score as score_lib
 import pandas as pd
 import tensorflow as tf
 

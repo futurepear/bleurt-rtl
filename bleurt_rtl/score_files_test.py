@@ -16,7 +16,7 @@ r"""Tests for scoring API functionality."""
 import os
 import tempfile
 
-from bleurt import score_files
+from bleurt_rtl import score_files
 import tensorflow.compat.v1 as tf
 tf.enable_eager_execution()
 
